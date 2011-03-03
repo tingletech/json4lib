@@ -1,5 +1,6 @@
 { 
+  "id":"http://json4lib.googlecode.com/hg/schema/objset.json",
   "description":"a set of objects",
   "type":"array",
-  "items":{ "type":{ "$ref":"./do.json"}}
+  "items":{ "type":{ "$ref":"http://json4lib.googlecode.com/hg/schema/do.json"}}
 }

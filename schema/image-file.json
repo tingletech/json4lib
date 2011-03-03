@@ -1,7 +1,8 @@
 {
-  "description":"an image file",
+  "id":"http://json4lib.googlecode.com/hg/schema/image-file.json",
+  "description":"image files (or array of image files) of a certain use type",
   "type":[ 
-    { "id":"image-file",
+    { "id":"single-image-file",
       "properties":{
       "src":{ "type":"text", "required":"true" },
       "x":{ "type":"integer" },
@@ -9,5 +10,5 @@
     }},
     "array"
   ],
-  "items":{ "type":{"$ref":"image-file"} }
+  "items":{ "type":{"$ref":"single-image-file"} }
 }
