@@ -1,12 +1,13 @@
-{
+{ 
+  "id":"http://json4lib.googlecode.com/hg/schema/do.json",
   "type":"object",
   "description":"digital object",
   "properties":{
-    "qdc":{ "type":{ "$ref":"./qdc.json"} },
-    "files":{ "type":{ "$ref":"./files.json"} },
+    "qdc":{ "type":{ "$ref":"http://json4lib.googlecode.com/hg/schema/qdc.json"} },
+    "files":{ "type":{ "$ref":"http://json4lib.googlecode.com/hg/schema/files.json"} },
     "objset_total":"integer",
     "objset_start":"integer",
     "objset_end":"integer",
-    "objset":{ "type":{ "$ref":"./objset.json"} }, 
+    "objset":{ "type":{ "$ref":"http://json4lib.googlecode.com/hg/schema/objset.json"} }, 
   }
 }
