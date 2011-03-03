@@ -1,6 +1,7 @@
 { 
-  "id":"http://json4lib.googlecode.com/hg/schema/qdc.json"
+  "id":"http://json4lib.googlecode.com/hg/schema/qdc.json",
   "type":"object",
+  "description":"dublin core metadata record",
   "properties": {
     "title": { "$ref":"./dcel.json" },
     "creator": { "$ref":"./dcel.json" },

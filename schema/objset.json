@@ -1,0 +1,5 @@
+{ 
+  "description":"a set of objects",
+  "type":"array",
+  "items":{ "type":{ "$ref":"./do.json"}}
+}

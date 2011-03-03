@@ -1,0 +1,13 @@
+{
+  "description":"an image file",
+  "type":[ 
+    { "id":"image-file",
+      "properties":{
+      "src":{ "type":"text", "required":"true" },
+      "x":{ "type":"integer" },
+      "y":{ "type":"integer" }, 
+    }},
+    "array"
+  ],
+  "items":{ "type":{"$ref":"image-file"} }
+}

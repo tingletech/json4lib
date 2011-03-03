@@ -1,0 +1,9 @@
+{
+  "type":"object",
+  "description":"digital object",
+  "properties":{
+    "qdc":{ "type":{ "$ref":"./qdc.json"} },
+    "files":{ "type":{ "$ref":"./files.json"} },
+    "objset":{ "type":{ "$ref":"./objset.json"} }, 
+  }
+}
