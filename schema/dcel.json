@@ -1,10 +1,11 @@
 {
-  "id":"http://json4lib.googlecode.com/hg/schema/dcel.json"
+  "id":"http://json4lib.googlecode.com/hg/schema/dcel.json",
   "description":"arbitrarily qualifiable Dublin Core Element",
   "type":[ 
     "string", 
     "array", 
     { 
+      "id":"dcel",
       "type":"object",
       "properties":{
         "q":{
@@ -15,7 +16,8 @@
           "type":"string",
           "description":"value",
         },
-      }
+      },
     },
   ],
+  "items":{ "type":[ "string", {"$ref":"dcel"}],},
 }

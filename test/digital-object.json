@@ -1,0 +1,10 @@
+{"objset_total":1,"objset_start":1,"objset_end":1,"objset":[
+{"qdc":{
+"title":"[Street scene, Chinatown.]",
+"subject":{"q":"series","v":"San Francisco Chinese Community and Earthquake Damage,"},
+"publisher":"The Bancroft Library. University of California, Berkeley.",
+"type":"image",
+"identifier":["http://ark.cdlib.org/ark:/13030/tf8r29p300",":169",],
+"relation":[{"q":"ispartof","v":"http://oac.cdlib.org/findaid/ark:/13030/tf2n39n8mr"},{"q":"ispartof","v":"ark:/13030/tf7r29p8s0"},{"q":"ispartof","v":"http://bancroft.berkeley.edu/"},{"q":"vc","v":"http://sunsite.berkeley.edu/CalHeritage/"},],
+},"files":{"thumbnail":{"src":"http://ark.cdlib.org/ark:/13030/tf8r29p300/thumbnail","x":192,"y":128,},"reference":[{"src":"/ark:/13030/tf8r29p300/med-res","x":768,"y":512,},{"src":"/ark:/13030/tf8r29p300/hi-res","x":1536,"y":1024,},],},
+},],}

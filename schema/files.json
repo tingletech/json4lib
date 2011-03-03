@@ -1,0 +1,8 @@
+{
+  "type":"object",
+  "description":"file map for the object",
+  "properties":{
+    "thumbnail":{ "$ref":"./image-file.json"},
+    "reference":{ "$ref":"./image-file.json"},
+  }
+}
