@@ -1,0 +1,21 @@
+{ 
+  "id":"http://json4lib.googlecode.com/hg/schema/qdc.json"
+  "type":"object",
+  "properties": {
+    "title": { "$ref":"./dcel.json" },
+    "creator": { "$ref":"./dcel.json" },
+    "subject": { "$ref":"./dcel.json" },
+    "description": { "$ref":"./dcel.json" },
+    "publisher": { "$ref":"./dcel.json" },
+    "contributor": { "$ref":"./dcel.json" },
+    "date": { "$ref":"./dcel.json" },
+    "type": { "$ref":"./dcel.json" },
+    "format": { "$ref":"./dcel.json" },
+    "identifier": { "$ref":"./dcel.json" },
+    "source": { "$ref":"./dcel.json" },
+    "language": { "$ref":"./dcel.json" },
+    "relation": { "$ref":"./dcel.json" },
+    "coverage": { "$ref":"./dcel.json" },
+    "rights": { "$ref":"./dcel.json" },
+  }
+}
