@@ -1,0 +1,21 @@
+{
+  "id":"http://json4lib.googlecode.com/hg/schema/dcel.json"
+  "description":"arbitrarily qualifiable Dublin Core Element",
+  "type":[ 
+    "string", 
+    "array", 
+    { 
+      "type":"object",
+      "properties":{
+        "q":{
+          "type":"string",
+          "description":"arbitrary qualifier",
+        },
+        "v":{
+          "type":"string",
+          "description":"value",
+        },
+      }
+    },
+  ],
+}
