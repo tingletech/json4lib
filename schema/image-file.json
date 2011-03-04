@@ -6,7 +6,7 @@
       "properties":{
       "src":{ "type":"text", "required":"true" },
       "x":{ "type":"integer" },
-      "y":{ "type":"integer" }, 
+      "y":{ "type":"integer" } 
     }},
     "array"
   ],

@@ -10,14 +10,18 @@
       "properties":{
         "q":{
           "type":"string",
-          "description":"arbitrary qualifier",
+          "description":"arbitrary qualifier"
         },
         "v":{
           "type":"string",
-          "description":"value",
-        },
-      },
-    },
+          "description":"value"
+        }
+      }
+    }
   ],
-  "items":{ "type":[ "string", {"$ref":"dcel"}],},
+  "items":{ 
+    "type":[ 
+      "string", {"$ref":"dcel"}
+    ]
+  }
 }
