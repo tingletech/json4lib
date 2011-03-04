@@ -1,5 +1,5 @@
 {
-  "id":"http://json4lib.googlecode.com/hg/schema/image-file.json",
+  "id":"http://json4lib.googlecode.com/hg/schema/image-file.json#",
   "description":"image files (or array of image files) of a certain use type",
   "type":[ 
     { "id":"single-image-file",

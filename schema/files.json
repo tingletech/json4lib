@@ -1,9 +1,9 @@
 {
-  "id":"http://json4lib.googlecode.com/hg/schema/files.json",
+  "id":"http://json4lib.googlecode.com/hg/schema/files.json#",
   "type":"object",
   "description":"file map for the object",
   "properties":{
-    "thumbnail":{ "$ref":"http://json4lib.googlecode.com/hg/schema/image-file.json"},
-    "reference":{ "$ref":"http://json4lib.googlecode.com/hg/schema/image-file.json"}
+    "thumbnail":{ "$ref":"http://json4lib.googlecode.com/hg/schema/image-file.json#"},
+    "reference":{ "$ref":"http://json4lib.googlecode.com/hg/schema/image-file.json#"}
   }
 }

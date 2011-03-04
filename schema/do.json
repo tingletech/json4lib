@@ -1,5 +1,5 @@
 { 
-  "id":"http://json4lib.googlecode.com/hg/schema/do.json",
+  "id":"http://json4lib.googlecode.com/hg/schema/do.json#",
   "type":"object",
   "description":"digital object",
   "properties":{
