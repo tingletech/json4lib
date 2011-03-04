@@ -17,6 +17,6 @@
     "language": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json" },
     "relation": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json" },
     "coverage": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json" },
-    "rights": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json" },
+    "rights": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json" }
   }
 }
