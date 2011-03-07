@@ -1,13 +1,14 @@
 { 
   "id":"http://json4lib.googlecode.com/hg/schema/do.json#",
+  "$schema":"http://json-schema.org/hyper-schema#",
   "type":"object",
   "description":"digital object",
   "properties":{
-    "qdc":{ "type":{ "$ref":"http://json4lib.googlecode.com/hg/schema/qdc.json#"} },
-    "files":{ "type":{ "$ref":"http://json4lib.googlecode.com/hg/schema/files.json#"} },
-    "objset_total":"integer",
-    "objset_start":"integer",
-    "objset_end":"integer",
-    "objset":{ "type":{ "$ref":"http://json4lib.googlecode.com/hg/schema/objset.json#"} }
+    "qdc":{ "$ref":"http://json4lib.googlecode.com/hg/schema/qdc.json#"},
+    "files":{ "$ref":"http://json4lib.googlecode.com/hg/schema/files.json#"},
+    "objset_total": {"type":"integer"},
+    "objset_start":{"type":"integer"},
+    "objset_end":{"type":"integer"},
+    "objset":{ "$ref":"http://json4lib.googlecode.com/hg/schema/objset.json#" }
   }
 }

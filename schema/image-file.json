@@ -1,14 +1,18 @@
 {
   "id":"http://json4lib.googlecode.com/hg/schema/image-file.json#",
+  "$schema":"http://json-schema.org/hyper-schema#",
   "description":"image files (or array of image files) of a certain use type",
   "type":[ 
-    { "id":"single-image-file",
+    "array",
+    { 
+      "id":"single-image-file",
+      "type":"object",
       "properties":{
-      "src":{ "type":"text", "required":"true" },
-      "x":{ "type":"integer" },
-      "y":{ "type":"integer" } 
-    }},
-    "array"
+        "src":{ "type":"text", "required":true },
+        "x":{ "type":"integer" },
+        "y":{ "type":"integer" } 
+      }
+    }
   ],
-  "items":{ "type":{"$ref":"single-image-file"} }
+  "items":{ "$ref":"single-image-file" }
 }

@@ -1,5 +1,6 @@
 { 
   "id":"http://json4lib.googlecode.com/hg/schema/qdc.json#",
+  "$schema":"http://json-schema.org/hyper-schema#",
   "type":"object",
   "description":"dublin core metadata record",
   "properties": {

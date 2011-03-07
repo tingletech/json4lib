@@ -1,9 +1,8 @@
 {
   "id":"http://json4lib.googlecode.com/hg/schema/dcel.json#",
+  "$schema":"http://json-schema.org/hyper-schema#",
   "description":"arbitrarily qualifiable Dublin Core Element",
   "type":[ 
-    "string", 
-    "array", 
     { 
       "id":"dcel",
       "type":"object",
@@ -17,7 +16,9 @@
           "description":"value"
         }
       }
-    }
+    },
+    "string", 
+    "array" 
   ],
   "items":{ 
     "type":[ 
