@@ -1,5 +1,6 @@
 { 
   "id" : "http://json4lib.googlecode.com/hg/schema/objset.json#", 
+  "$schema":"http://json-schema.org/hyper-schema#",
   "description" : "a set of objects", 
   "type" : "array", 
   "items" : { 
