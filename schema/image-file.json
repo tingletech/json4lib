@@ -15,4 +15,6 @@
     }
   ],
   "items":{ "$ref":"single-image-file" }
+  ,"additionalItems":false
+  ,"additionalProperties":false
 }
