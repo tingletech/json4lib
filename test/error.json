@@ -1,4 +1,7 @@
-{"id":"red","objset_total":1,"objset_start":1,"objset":1,"objset_end":[
+{
+"$schema":"http://json4lib.googlecode.com/hg/schema/do.json#",
+
+"id":"red","objset_total":"1one","objset_start":1,"objset":1,"objset_end":[
 {"qdc":{
 "xxtitle":"[Street scene, Chinatown.]",
 "subject":{"q":"series","v":"San Francisco Chinese Community and Earthquake Damage,"},
