@@ -11,4 +11,5 @@
     "objset_end":{"type":"integer"},
     "objset":{ "$ref":"http://json4lib.googlecode.com/hg/schema/objset.json#" }
   }
+  ,"additionalProperties":false
 }

@@ -40,7 +40,7 @@ testObject1 = JSON.parse(testObject1);
 var report1 = env.validate(testObject1, {"$ref":"http://json4lib.googlecode.com/hg/schema/do.json#"});
 
 if (report1.errors.length === 0) {
-  console.log("JSON is valid against the schema");
+  console.log("./digital-object.json is valid against the schema");
 } else {
   console.log(report1);
 } 
@@ -53,7 +53,8 @@ testObject2 = JSON.parse(testObject2);
 var report2 = env.validate(testObject2, {"$ref":"http://json4lib.googlecode.com/hg/schema/do.json#"});
 
 if (report2.errors.length === 0) {
-  console.log("JSON is valid against the schema");
+  console.log("./error.json is valid against the schema");
 } else {
   console.log(report2);
 } 
+console.log(testObject2);

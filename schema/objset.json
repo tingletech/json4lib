@@ -8,4 +8,6 @@
       "$ref" : "http://json4lib.googlecode.com/hg/schema/do.json#"
     }
   }
+  ,"additionalItems":false
+  ,"additionalProperties":false
 }
