@@ -5,15 +5,17 @@
 var CDL = (typeof CDL !== 'undefined') ? CDL : {} ;
 CDL.DSC = (typeof CDL.DSC !== 'undefined') ? CDL.DSC : {};
 CDL.DSC.SlideshowLink = (typeof CDL.DSC.SlideshowLink !== 'undefined') ? CDL.DSC.SlideshowLink : function(anchor) {
+  // the logic here leave something to be desired works via trial and error
   if ( $("#CDL_DSC_SlideshowDialog").length == 0) {
     $(anchor).append("<div id='CDL_DSC_SlideshowDialog' class='pikachoose'></div>");
-    $("#CDL_DSC_SlideshowDialog").dialog('open').dialog({ 
+    $("#CDL_DSC_SlideshowDialog").dialog({ 
       autoOpen: false,
       position: 'top',
       modal: true,
       width: 550 
     });
   } else {
+    $("#CDL_DSC_SlideshowDialog").dialog('open');
     return false;
   }
   $("#CDL_DSC_SlideshowDialog").dialog('open');
@@ -24,7 +26,6 @@ CDL.DSC.SlideshowLink = (typeof CDL.DSC.SlideshowLink !== 'undefined') ? CDL.DSC
     target: "_blank"
   });
   return false;
-
 };
 
 
