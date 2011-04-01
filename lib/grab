@@ -1,0 +1,3 @@
+#!/bin/env bash
+git clone git://github.com/jeremyfry/PikaChoose.git
+git clone git://github.com/jquery/jquery-ui.git
