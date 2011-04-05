@@ -1,5 +1,7 @@
 /**
-*  function that does the ajax API call and loads it into the pikachoose slideshow
+*  function that does the ajax API call and loads it into the
+   pikachoose slideshow inside of a jquery UI dialog
+
     config_object = { 
       url: <REQUIRED: string; url of search results>,
       slideshow: <REQUIRED: element; element that will get turned to a slideshow>
@@ -59,7 +61,7 @@ if ( typeof exports != "undefined" ) {
 }
 
 /**
-Copyright (c) 2004, Regents of the University of California
+Copyright (c) 2011, Regents of the University of California
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without 
