@@ -9,4 +9,3 @@ slideshow out of search results on OAC/Calisphere::
   onclick="return(CDL.DSC.SlideshowLink(this, 'Dublin Slideshow'))">Slideshow of Dublin.</a>
 
 it depends on jQueryUI Dialog (http://jqueryui.com/) and Pikachoose (http://pikachoose.com/)
-
