@@ -41,7 +41,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'json4lib'
-copyright = u'2011, Digital Special Collections, California Digital Library'
+copyright = u'2011, Regents of the University of California'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
