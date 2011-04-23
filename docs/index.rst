@@ -6,7 +6,10 @@
 json4lib
 ========
 
-Documentation for http://code.google.com/p/json4lib/source/browse/
+Source on google code
+---------------------
+
+http://code.google.com/p/json4lib/source/browse/
 
 Directories
 -----------
