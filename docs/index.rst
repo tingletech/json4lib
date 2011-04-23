@@ -6,6 +6,8 @@
 json4lib
 ========
 
+experiments with json schema and code used by CDL Digital Special Collections
+
 Source on google code
 ---------------------
 
@@ -36,7 +38,7 @@ Directories
 
 .. describe:: test
 
-  failed attempt at some tests for the JSON in node
+  incomplete attempt at some tests for the JSON in node
 
 Contents:
 
