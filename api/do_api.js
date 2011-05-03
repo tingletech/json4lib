@@ -17,7 +17,7 @@ do_api.Item = function(json) {
 * @returns a caption to display
 */
 do_api.Item.prototype.caption = function() {
-  return this.data.qdc.title.toString();
+  return "<div>" + this.data.qdc.title.toString() + "<br/>" + this.data.qdc.publisher.toString() + "</div>";
 }
 
 /**
