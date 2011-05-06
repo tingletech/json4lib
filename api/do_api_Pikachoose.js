@@ -28,7 +28,7 @@ var do_api_Pikachoose = function (config){
           a[i].image = item.getImg();
           a[i].caption = item.caption();
           a[i].link = item.href();
-          a[i].title = "Image: " + item.caption();
+          a[i].title = "Image: " + item.data.qdc.title; // directly access the qdc from here for now
         }
       });
       // turn supplied slideshow element into PikaChoose slideshow
