@@ -24,10 +24,12 @@ do_api.Item.prototype.caption = function() {
 * @returns URL to image file
 */
 do_api.Item.prototype.getImg = function() {
-  if(this.data.files.reference.src) {
-    return this.data.files.reference.src;
-  } else if (this.data.files.reference[0].src) {
-    return this.data.files.reference[0].src;
+  if(this.data.files.reference) {
+    if(this.data.files.reference.src) {
+      return this.data.files.reference.src;
+    } else if (this.data.files.reference[0].src) {
+      return this.data.files.reference[0].src;
+    }
   } else {
     return this.data.files.thumbnail.src;
   }
