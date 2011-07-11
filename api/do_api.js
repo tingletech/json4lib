@@ -48,7 +48,14 @@ do_api.Item.prototype.thumbnail = function() {
 * @returns href to the item in OAC/Calisphere
 */
 do_api.Item.prototype.href = function() {
-  return (this.data.qdc.identifier[0]) ? this.data.qdc.identifier[0] : this.data.qdc.identifier;
+  var href;
+  if (typeof this.data.qdc.identifier == 'object') {
+    href = this.data.qdc.identifier[0];
+  }
+  if (typeof this.data.qdc.identifier == 'string') {
+    href = this.data.qdc.identifier;
+  }
+  return href;
 }
 
 /**
