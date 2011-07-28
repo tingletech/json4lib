@@ -5,7 +5,7 @@
 var CDL = (typeof CDL !== 'undefined') ? CDL : {} ;
 CDL.DSC = (typeof CDL.DSC !== 'undefined') ? CDL.DSC : {};
 CDL.DSC.SlideshowLink = (typeof CDL.DSC.SlideshowLink !== 'undefined') ? CDL.DSC.SlideshowLink : function(anchor, title) {
-  title = title || "Calisphere Slideshow Widget";
+  title = title || "Calisphere Slideshow";
   // the logic here leave something to be desired works via trial and error
   if ( $("#CDL_DSC_SlideshowDialog").length == 0) {
     $(anchor).append('<div id="CDL_DSC_SlideshowDialog" class="pikachoose"><div/><div style="background-color: #FFFFFF; padding: 1em;"><a href="http://calisphere.org/" tabindex="-1"><img src="http://www.calisphere.universityofcalifornia.edu/images/logos/calisphere_logo.gif" tabindex="-1" title="Calisphere" border="0"/></a></div></div>').blur();
@@ -14,7 +14,8 @@ CDL.DSC.SlideshowLink = (typeof CDL.DSC.SlideshowLink !== 'undefined') ? CDL.DSC
       autoOpen: false,
       position: 'top',
       modal: true,
-      width: 550
+      width: 550,
+      close: function() { $("#CDL_DSC_SlideshowDialog").remove(); }
     });
   } else {
     $("#CDL_DSC_SlideshowDialog").dialog('open');
