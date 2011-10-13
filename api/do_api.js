@@ -18,7 +18,7 @@ do_api.Item = function(json) {
 */
 do_api.Item.prototype.caption = function() {
   var title = this.data.qdc.title ? this.data.qdc.title.toString() : 'no title';
-  var publisher = this.data.qdc.publisher ? this.data.qdc.publisher.toString() : '';
+  var publisher = this.data.courtesy_of ? this.data.courtesy_of.toString() : '';
   return "<div>" + title + "<br/>Courtesy of " + publisher + "</div>";
 }
 
