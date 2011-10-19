@@ -1,0 +1,10 @@
+pop up survey
+
+uses flash cookies to "remember" that you have filled out the survey or declined
+
+uses jQueryUI Dialog for the pop up
+
+uses Google analytics events to record results
+
+jfc nfriedly-Javascript-Flash-Cookies-cfab8b8 https://github.com/nfriedly/Javascript-Flash-Cookies 
+MIT License
