@@ -1,0 +1,13 @@
+{
+  "question":"Who are you?",
+  "instruction":"select the first that applys",
+  "options": [
+    'I\'m a K-12 Educator in California',
+    'I\'m a K-12 Educator',
+    'I\'m a College Educator at the University of California',
+    'I\'m a College Educator',
+    'I\'m ...',
+    'other',
+    'I\'m opting out'
+  ]
+}
