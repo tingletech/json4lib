@@ -1,33 +1,39 @@
 <form id="CDLDSCSurveyForm">
-<style type="text/css">
-.ui-dialog-title {
-  float:none !important;
-  display: block;
-  text-align: center;
-}
-#CDLDSCSurveyForm label {
-display: block;
-}
-</style>
-<div style="text-align:center;">
-  <img src="http://cdn.calisphere.org/data/13030/tr/kt5s2037tr/files/kt5s2037tr-FID_T1.jpg" title="image courtesy of Sourisseau Academy for State and Local History" />
-  <p>We are learning more about visitors to this website so we can continue to improve it. How would you best describe yourself?</p>
-</div>
-  <ul>
-	<label><input type="radio" name="who"/>Teacher, grade K-12</label>
-	<label><input type="radio" name="who"/>Student, grade K-12</label>
-	<label><input type="radio" name="who"/>College/graduate student</label>
-	<label><input type="radio" name="who"/>Faculty/academic researcher</label>
-	<label><input type="radio" name="who"/>Archivist/librarian</label>
-	<label><input type="radio" name="who"/>Personal researcher</label>
-	<label><input type="radio" name="who"/>Other <input name="other"/></label>
-  </ul>
+  <style type="text/css">
+  /* center the jQuery UI dialog */
+  .ui-dialog-title { float:none !important; display: block; text-align: center; }
+  /* css for this form */
+  #CDLDSCSurveyForm label { display: block; }
+  </style>
+  <div style="text-align:center;">
+    <img 
+      src="http://cdn.calisphere.org/data/13030/tr/kt5s2037tr/files/kt5s2037tr-FID_T1.jpg" 
+      title="image courtesy of Sourisseau Academy for State and Local History" />
+    <p>We are learning more about visitors to this website so we can
+    continue to improve it. How would you best describe yourself?</p>
+  </div> 
+  <div style="margin: 1em 0 1em 1em;">
+    <label><input type="radio" name="who" value="teacher,k12"/>Teacher, grade K-12</label>
+    <label><input type="radio" name="who" value="student,k12"/>Student, grade K-12</label>
+    <label><input type="radio" name="who" value="student,coll"/>College/graduate student</label>
+    <label><input type="radio" name="who" value="researcher,professional"/>Faculty/academic researcher</label>
+    <label><input type="radio" name="who" value="archivist/librarian"/>Archivist/librarian</label>
+    <label><input type="radio" name="who" value="researcher,personal"/>Personal researcher</label>
+    <div><label style="display:inline;"><input type="radio" name="who" value="other"/>Other </label><input name="other"/></div>
+  </div>
 
   <div style="text-align:center;">
     <input id="CDL_DSC_PopUpSurvey_submit" type="submit" name="CDL_DSC_PopUpSurvey_submit" value="Submit" 
      style="font-size: 1.5em; height: 1.8em; background-color: #4F81BD; color:#fff; border: solid 3px #385d8a;"
-     onclick="CDL.DSC.PopUpSurveySubmit(); return false;"/>
-    <p style="font-style: italic; font-size: 80%;">Thank you for your feedback!</p>
+     onclick="CDL.DSC.PopUpSurveySubmit($('#CDLDSCSurveyForm input:checked').val(),$('#CDLDSCSurveyForm input[name=other]').val() ); return false;"/>
+    <!-- communication area -->
+    <p id="CDLDSCSurveyFormB" style="font-style: italic; font-size: 80%;">Thank you for your feedback!</p>
   </div>
-  <div style="font-size: 80%"><a href="#" onclick="">No thanks</a></div>
+  <!-- opt out -->
+  <div style="font-size: 80%">
+    <a href="#" onclick="$('#CDL_DSC_PopUpSurvey').dialog('close'); return false;">No thanks</a>
+  </div>
+  <script> // log an event that the survey has been shown
+    var _gaq = _gaq || []; _gaq.push( ['cst._trackEvent', 'SurveyTestShownSurvey' ] );
+  </script>
 </form>
