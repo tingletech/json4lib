@@ -1,35 +1,76 @@
-/* ideally this is the only file required */
+/* set up the CDL.DSC namespace object if it does not exist yet 
+ */
 
 var CDL = (typeof CDL !== 'undefined') ? CDL : {} ;
 CDL.DSC = (typeof CDL.DSC !== 'undefined') ? CDL.DSC : {};
 
+// placeholder for flash cookie
+CDL.DSC.PopUpSurveyCookie = (typeof CDL.DSC.PopUpSurveyCookie !== 'undefined') ? CDL.DSC.PopUpSurveyCookie : "";
 
-CDL.DSC.PopUpSurveySubmit = (typeof CDL.DSC.PopUpSurveySubmit !== 'undefined') ? CDL.DSC.PopUpSurveySubmit : function(form){
+/* 
+ * CDL.DSC.PopUpSurvey* are functions that encapsulate functionality of the pop up survey
+ * seems to be written in backwards order of what it gets run in
+ */
+
+/* CDL.DSC.PopUpSurveySubmit(form)
+ * final step submit form to google analytics
+ */
+
+CDL.DSC.PopUpSurveySubmit = (typeof CDL.DSC.PopUpSurveySubmit !== 'undefined') ? CDL.DSC.PopUpSurveySubmit : function(){
+  // console.log(this);
+  // console.log(CDL.DSC.PopUpSurveyCookie);
   var _gaq = _gaq || [];
-  _gaq.push( ['cst._x', 'x'] );
+  _gaq.push( ['cst._trackEvent', 'SurveyTest', 'teacher', 'other' , 60 ] ); 
+   // time how long they spent before clicking?
+
+/* 
+  http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html
+  Call the _trackEvent() method in the source code of a page object, widget, or video. 
+    The specification for the _trackEvent() method is:
+
+_trackEvent(category, action, opt_label, opt_value)
+
+  category (required) 
+	The name you supply for the group of objects you want to
+	track.  
+  action (required)
+	A string that is uniquely paired with each category, and
+	commonly used to define the type of user interaction for the
+	web object.  
+  label (optional)
+	An optional string to provide additional dimensions to the
+	event data.
+  value (optional)
+	An integer that you can use to provide numerical data about the
+	user event.
+
+*/
+
+
 }
 
 
-
-/* CDL.DSC.PopUpSurveyPop(flash_cookie) 
- * step 2 needs to be defined first
+/* CDL.DSC.PopUpSurveyPop() 
+ *  open the jQueryDialog; pass the flash cookie up?
  */
 
-CDL.DSC.PopUpSurveyPop = (typeof CDL.DSC.PopUpSurveyPop !== 'undefined') ? CDL.DSC.PopUpSurveyPop : function(flash_cookie){
+CDL.DSC.PopUpSurveyPop = (typeof CDL.DSC.PopUpSurveyPop !== 'undefined') ? CDL.DSC.PopUpSurveyPop : function(){
   // will settimer go here; or one level up the call stack
   $('#SwfStore_CDL_OAC_Calisphere_survey_test_0').hide(); // needed for chrome
   var anchor=$('body');
-  // the logic here leave something to be desired works via trial and error
+  // the logic here leave something to be desired works via trial and error, based on slideshow widget
   if ( $("#CDL_DSC_PopUpSurvey").length == 0) {
-    $(anchor).append('<div id="CDL_DSC_PopUpSurvey">Survey </div>');
+    $(anchor).append('<div id="CDL_DSC_PopUpSurvey"/>');
     $("#CDL_DSC_PopUpSurvey").dialog({ 
-      title: "survey title",
-      autoOpen: false,
+      title: "We want to hear from you!",
       position: 'top',
+      autoOpen: false,
       modal: true,
+      resizable: false,
       width: 550,
       close: function() { $("#CDL_DSC_PopUpSurvey").remove(); }
     });
+    $("#CDL_DSC_PopUpSurvey").load('questions.html'); // async
   } else {
     $("#CDL_DSC_PopUpSurvey").dialog('open');
     return false;
@@ -43,14 +84,14 @@ CDL.DSC.PopUpSurveyPop = (typeof CDL.DSC.PopUpSurveyPop !== 'undefined') ? CDL.D
  * calls the function that creates the jQuery survey CDL.DSC.PopUpSurveyPop()
  */
 CDL.DSC.PopUpSurvey = (typeof CDL.DSC.PopUpSurvey !== 'undefined') ? CDL.DSC.PopUpSurvey : function(){
-  var flash_cookie = new SwfStore({ // Javascript Flash Cookie
+  CDL.DSC.PopUpSurveyCookie = new SwfStore({ // Javascript Flash Cookie
     namespace: 'CDL.OAC/Calisphere.survey_test', // the this must match all other instances that want to share cookies
-    swf_url: './jfc/storage.swf', // to work cross-domain, use the same absolute url on both pages
+    swf_url: 'http://cdn.calisphere.org/json4lib/survey/jfc/storage.swf', // to work cross-domain, use the same absolute url on both pages; change to your URL
     debug: false, // depending on your browser, this will either go to the console or the bottom of the page.
     onready: function(){ // wait for the page to be ready
-      if ( !flash_cookie.get('beenSurveyed') ) { // check if they have been surveyed before
-        CDL.DSC.PopUpSurveyPop({"cookie":flash_cookie, "question":"./question.json"}); // pop up the survey form
-      }
+      if ( !CDL.DSC.PopUpSurveyCookie.get('beenSurveyed') ) { // check if they have been surveyed before
+        CDL.DSC.PopUpSurveyPop(); // pop up the survey form
+      };
     },
     onerror: function(){
       // in case we had an error. (The most common cause is that the user disabled flash cookies.)
