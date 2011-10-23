@@ -12,22 +12,12 @@ CDL.DSC.PopUpSurveyCookie = (typeof CDL.DSC.PopUpSurveyCookie !== 'undefined') ?
  * seems to be written in backwards order of what it gets run in
  */
 
-/* CDL.DSC.PopUpSurveyDone()
- * all done, let's check this on off the list
- */
-
-CDL.DSC.PopUpSurveyDone = (typeof CDL.DSC.PopUpSurveyDone !== 'undefined') ? CDL.DSC.PopUpSurveyDone : function(){
-  // check, this one been done surveyed 
-  CDL.DSC.PopUpSurveyCookie.set('beenSurveyed','done');
-  // pop up go bye bye
-  $("#CDL_DSC_PopUpSurvey").remove();
-}
-
 /* CDL.DSC.PopUpSurveySubmit(answer,other)
  * final step submit form to google analytics
  */
 
 CDL.DSC.PopUpSurveySubmit = (typeof CDL.DSC.PopUpSurveySubmit !== 'undefined') ? CDL.DSC.PopUpSurveySubmit : function(answer,other){
+  console.log(flash_cookie);
   // form validation; was something selected
   if (typeof answer == 'undefined' && ! other ) {
     $("#CDLDSCSurveyFormB").text("Please select the best answer above.");
@@ -45,7 +35,8 @@ CDL.DSC.PopUpSurveySubmit = (typeof CDL.DSC.PopUpSurveySubmit !== 'undefined') ?
   /* http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html
      _trackEvent(                 category,    action, opt_label, opt_value) */
   _gaq.push( ['cst._trackEvent', 'SurveyTest', answer, other ] ); 
-   // time how long they spent before clicking?
+  flash_cookie.set('test',"no");
+  // time how long they spent before clicking?
   $("#CDL_DSC_PopUpSurvey").remove();
 }
 
@@ -55,10 +46,9 @@ CDL.DSC.PopUpSurveySubmit = (typeof CDL.DSC.PopUpSurveySubmit !== 'undefined') ?
  */
 
 CDL.DSC.PopUpSurveyPop = (typeof CDL.DSC.PopUpSurveyPop !== 'undefined') ? CDL.DSC.PopUpSurveyPop : function(flash_cookie){
-  // will settimer go here; or one level up the call stack
-  // $('#SwfStore_CDL_OAC_Calisphere_survey_test_0').hide(); // needed for chrome
   var anchor=$('body');
-  // the logic here leave something to be desired works via trial and error, based on slideshow widget
+  // the logic here leave something to be desired works via trial and
+  // error, based on slideshow widget
   if ( $("#CDL_DSC_PopUpSurvey").length == 0) {
     $(anchor).append('<div id="CDL_DSC_PopUpSurvey"/>');
     $("#CDL_DSC_PopUpSurvey").dialog({ 
@@ -71,7 +61,7 @@ CDL.DSC.PopUpSurveyPop = (typeof CDL.DSC.PopUpSurveyPop !== 'undefined') ? CDL.D
       width: 550,
       close: function() { 
         $("#CDL_DSC_PopUpSurvey").remove(); 
-        flash_cookie.set('test',"yes");
+        flash_cookie.set('test',"noa");
         _gaq.push( ['cst._trackEvent', 'SurveyTest', "declined" ] );
       }
     });
@@ -99,6 +89,8 @@ CDL.DSC.PopUpSurvey = (typeof CDL.DSC.PopUpSurvey !== 'undefined') ? CDL.DSC.Pop
     onready: function(){ // wait for the page to be ready
       // check if they have been surveyed before
       if ( !flash_cookie.get('testforThis')) { 
+        console.log("hey");
+        console.log(flash_cookie.get('test'));
         // pop up the survey form, pass along the cookie
         CDL.DSC.PopUpSurveyPop(flash_cookie); 
       };
