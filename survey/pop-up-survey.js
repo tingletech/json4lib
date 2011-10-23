@@ -17,7 +17,6 @@ CDL.DSC.PopUpSurveyCookie = (typeof CDL.DSC.PopUpSurveyCookie !== 'undefined') ?
  */
 
 CDL.DSC.PopUpSurveySubmit = (typeof CDL.DSC.PopUpSurveySubmit !== 'undefined') ? CDL.DSC.PopUpSurveySubmit : function(answer,other){
-  console.log(flash_cookie);
   // form validation; was something selected
   if (typeof answer == 'undefined' && ! other ) {
     $("#CDLDSCSurveyFormB").text("Please select the best answer above.");
@@ -89,10 +88,15 @@ CDL.DSC.PopUpSurvey = (typeof CDL.DSC.PopUpSurvey !== 'undefined') ? CDL.DSC.Pop
     onready: function(){ // wait for the page to be ready
       // check if they have been surveyed before
       if ( !flash_cookie.get('testforThis')) { 
-        console.log("hey");
-        console.log(flash_cookie.get('test'));
         // pop up the survey form, pass along the cookie
-        CDL.DSC.PopUpSurveyPop(flash_cookie); 
+        // load jQuery.ui if it's not already loaded
+        if (typeof jQuery.ui == 'undefined') {
+          jQuery.getScript('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js',function(){
+            CDL.DSC.PopUpSurveyPop(flash_cookie); 
+          });
+        } else {
+          CDL.DSC.PopUpSurveyPop(flash_cookie); 
+        }
       };
     },
     onerror: function(){
@@ -102,6 +106,36 @@ CDL.DSC.PopUpSurvey = (typeof CDL.DSC.PopUpSurvey !== 'undefined') ? CDL.DSC.Pop
     }
   });
 };
+
+if (typeof jQuery == 'undefined') {
+  // more or less stolen form jquery core and adapted by paul irish
+  function getScript(url,success){
+    var script=document.createElement('script');
+    script.src=url;
+    var head=document.getElementsByTagName('head')[0],
+        done=false;
+    // Attach handlers for all browsers
+    script.onload=script.onreadystatechange = function(){
+      if ( !done && (!this.readyState
+           || this.readyState == 'loaded'
+           || this.readyState == 'complete') ) {
+        done=true;
+        success();
+        script.onload = script.onreadystatechange = null;
+        head.removeChild(script);
+      }
+    };
+    head.appendChild(script);
+  }
+  getScript('https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js', function() {
+    if (typeof jQuery=='undefined') { 
+    } else {
+      CDL.DSC.PopUpSurvey();
+    }
+  });
+} else { 
+  CDL.DSC.PopUpSurvey();
+}
 
 /**
 * exports for commonJS modules (node.js)
