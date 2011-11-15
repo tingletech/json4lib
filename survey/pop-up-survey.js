@@ -20,11 +20,7 @@ CDL.DSC.PopUpSurveySubmit = (typeof CDL.DSC.PopUpSurveySubmit !== 'undefined') ?
   // form validation; was something selected
   if (typeof answer == 'undefined' && ! other ) {
     $("#CDLDSCSurveyFormB").text("Please select the best answer above.");
-    return false;
-  }
-  // is other filled in if selected
-  if ( answer == 'other' &&  ! other ) {
-    $("#CDLDSCSurveyFormB").text("Please fill in a value to the right of \"other\"");
+    $("#CDLDSCSurveyFormB").css("color", "#f11");
     return false;
   }
   if ( other && typeof answer == 'undefined' ) {
@@ -34,7 +30,7 @@ CDL.DSC.PopUpSurveySubmit = (typeof CDL.DSC.PopUpSurveySubmit !== 'undefined') ?
   /* http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html
      _trackEvent(                 category,    action, opt_label, opt_value) */
   _gaq.push( ['cst._trackEvent', 'SurveyTest', answer, other ] ); 
-  flash_cookie.set('test',"no");
+  flash_cookie.set('cdlsurvey',"ssurvey-2012");
   // time how long they spent before clicking?
   $("#CDL_DSC_PopUpSurvey").remove();
 }
@@ -60,11 +56,11 @@ CDL.DSC.PopUpSurveyPop = (typeof CDL.DSC.PopUpSurveyPop !== 'undefined') ? CDL.D
       width: 550,
       close: function() { 
         $("#CDL_DSC_PopUpSurvey").remove(); 
-        flash_cookie.set('test',"noa");
         _gaq.push( ['cst._trackEvent', 'SurveyTest', "declined" ] );
+        flash_cookie.set('cdlsurvey',"ssurvey-2012");
       }
     });
-    $("#CDL_DSC_PopUpSurvey").load('questions.html'); // async
+    $("#CDL_DSC_PopUpSurvey").load('/json4lib/survey/questions.html'); // async
   } else {
     $("#CDL_DSC_PopUpSurvey").dialog('open');
     return false;
@@ -82,12 +78,12 @@ CDL.DSC.PopUpSurvey = (typeof CDL.DSC.PopUpSurvey !== 'undefined') ? CDL.DSC.Pop
   flash_cookie = new SwfStore({ 
     // this must match all other instances that want to share cookies
     namespace: 'CDL.OAC/Calisphere.survey_test', 
-    swf_url: '/json4lib/survey/jfc/storage.swf', 
-    // swf_url: 'http://cdn.calisphere.org/json4lib/survey/jfc/storage.swf', 
+    // swf_url: '/json4lib/survey/jfc/storage.swf', 
+    swf_url: 'http://cdn.calisphere.org/json4lib/survey/jfc/storage.swf', 
     debug: false, 
     onready: function(){ // wait for the page to be ready
       // check if they have been surveyed before
-      if ( !flash_cookie.get('testforThis')) { 
+      if ( ! (flash_cookie.get('cdlsurvey')=='survey-2012') ) { 
         // pop up the survey form, pass along the cookie
         // load jQuery.ui if it's not already loaded
         if (typeof jQuery.ui == 'undefined') {
