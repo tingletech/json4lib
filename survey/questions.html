@@ -3,7 +3,7 @@
   /* center the jQuery UI dialog */
   .ui-dialog-title { float:none !important; display: block; text-align: center; }
   /* css for this form */
-  #CDLDSCSurveyForm label { display: block; }
+  #CDLDSCSurveyForm label { display: block; text-align: left; }
   </style>
   <div style="text-align:center;">
     <img 
@@ -20,7 +20,7 @@
     <label><input type="radio" name="who" value="student,coll"/>College/graduate student</label>
     <label><input type="radio" name="who" value="researcher,professional"/>Faculty/academic researcher</label>
     <label><input type="radio" name="who" value="archivist/librarian"/>Archivist/librarian</label>
-    <div><label style="display:inline;"><input type="radio" name="who" value="other" id="CDLDSCPopUpSurveyother"/>Other </label><input name="other" onfocus="$('#CDLDSCPopUpSurveyother')[0].checked=true"/></div>
+    <div style="text-align: left;"><label style="display:inline;"><input type="radio" name="who" value="other" id="CDLDSCPopUpSurveyother"/>Other </label><input name="other" onfocus="$('#CDLDSCPopUpSurveyother')[0].checked=true"/></div>
   </div>
 
   <div style="text-align:center;">
@@ -31,7 +31,7 @@
     <p id="CDLDSCSurveyFormB" style="font-style: italic; font-size: 80%;">Thank you for your feedback!</p>
   </div>
   <!-- opt out -->
-  <div style="font-size: 80%">
+  <div style="font-size: 80%; text-align: left;">
     <a href="#" onclick="$('#CDL_DSC_PopUpSurvey').dialog('close'); return false;">No thanks</a>
   </div>
   <script>
