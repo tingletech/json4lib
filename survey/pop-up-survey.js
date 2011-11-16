@@ -58,13 +58,15 @@ CDL.DSC.PopUpSurveyPop = (typeof CDL.DSC.PopUpSurveyPop !== 'undefined') ? CDL.D
         $("#CDL_DSC_PopUpSurvey").remove(); 
         _gaq.push( ['cst._trackEvent', 'SurveyTest', "declined" ] );
         flash_cookie.set('cdlsurvey',"ssurvey-2012");
+      },
+      open: function() {
+        $(this).load('/json4lib/survey/questions.html', function() {
+          innerHeight = $('#CDLDSCSurveyForm').height();
+          $(this).height(innerHeight);
+        });
       }
     });
-    $("#CDL_DSC_PopUpSurvey").load('/json4lib/survey/questions.html'); // async
-  } else {
-    $("#CDL_DSC_PopUpSurvey").dialog('open');
-    return false;
-  }
+  } 
   $("#CDL_DSC_PopUpSurvey").dialog('open');
   return false;
 };
