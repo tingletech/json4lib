@@ -1,7 +1,9 @@
 <form id="CDLDSCSurveyForm">
   <style type="text/css">
   /* center the jQuery UI dialog */
-  .ui-dialog-title { float:none !important; display: block; text-align: center; }
+  .ui-dialog-title { float:none !important; display: block; text-align: center; 
+  font-size: 120%;
+}
   /* css for this form */
   #CDLDSCSurveyForm label { display: block; text-align: left; }
   </style>
@@ -28,7 +30,7 @@
      style="font-size: 1.5em; height: 1.8em; background-color: #4F81BD; color:#fff; border: solid 3px #385d8a;"
      onclick="CDL.DSC.PopUpSurveySubmit($('#CDLDSCSurveyForm input:checked').val(),$('#CDLDSCSurveyForm input[name=other]').val() ); return false;"/>
     <!-- communication area -->
-    <p id="CDLDSCSurveyFormB" style="font-style: italic; font-size: 80%;">Thank you for your feedback!</p>
+    <p id="CDLDSCSurveyFormB" style="font-style: italic;">Thank you for your feedback!</p>
   </div>
   <!-- opt out -->
   <div style="font-size: 80%; text-align: left;">
