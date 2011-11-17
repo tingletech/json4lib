@@ -30,7 +30,7 @@ CDL.DSC.PopUpSurveySubmit = (typeof CDL.DSC.PopUpSurveySubmit !== 'undefined') ?
   /* http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html
      _trackEvent(                 category,    action, opt_label, opt_value) */
   _gaq.push( ['cst._trackEvent', 'SurveyTest', answer, other ] ); 
-  flash_cookie.set('cdlsurvey',"ssurvey-2012");
+  flash_cookie.set('cdlsurvey',"survey-2012");
   // time how long they spent before clicking?
   $("#CDL_DSC_PopUpSurvey").remove();
 }
@@ -57,7 +57,7 @@ CDL.DSC.PopUpSurveyPop = (typeof CDL.DSC.PopUpSurveyPop !== 'undefined') ? CDL.D
       close: function() { 
         $("#CDL_DSC_PopUpSurvey").remove(); 
         _gaq.push( ['cst._trackEvent', 'SurveyTest', "declined" ] );
-        flash_cookie.set('cdlsurvey',"ssurvey-2012");
+        flash_cookie.set('cdlsurvey',"survey-2012");
       },
       open: function() {
         $(this).load('/json4lib/survey/questions.html', function() {
