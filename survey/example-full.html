@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-darkness/jquery-ui.css" type="text/css" media="screen">
+</head>
+<body>
+<h1>pop up survey test page</h1>
+<!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js">
+</script -->
+
+<script src="/json4lib/survey/jfc/src/swfstore.js"></script>
+<script src="/json4lib/survey/pop-up-survey.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(
+  ['_gat._anonymizeIp'],
+  ['cst._setAllowHash', false],
+  ['cst._setAllowLinker', true],
+  ['cst._setCustomVar', 1, 'brand', 'survey-test', 3 ],
+  ['cst._trackPageLoadTime'],
+  ['cst._trackPageview']
+);
+(function() {
+    var ga = document.createElement('script');     ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:'   == document.location.protocol ? 'https://ssl'   : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>
