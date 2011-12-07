@@ -1,0 +1,11 @@
+{
+  "id":"http://json4lib.googlecode.com/hg/schema/files.json#",
+  "$schema":"http://json-schema.org/hyper-schema#",
+  "type":"object",
+  "description":"file map for the object",
+  "properties":{
+    "thumbnail":{ "$ref":"http://json4lib.googlecode.com/hg/schema/image-file.json#", "required":true},
+    "reference":{ "$ref":"http://json4lib.googlecode.com/hg/schema/image-file.json#"}
+ }
+ ,"additionalProperties":false
+}

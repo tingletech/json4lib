@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <!-- put the following line in the head of your HTML document with the ohter css links -->
+
+    <link type="text/css" href="http://cdn.calisphere.org/json4lib/slideshow/css/slideshowLink-combo.css" rel="stylesheet" /> 
+
+
+  </head>
+  <body>
+
+    <div>
+
+<!-- stuff on your site ... -->
+<!-- create a link to a calisphere search result ;
+     on the <a> element with an href to a calisphere serach result
+     to use a default title  
+     add onclick="return(CDL.DSC.SlideshowLink(this)" or
+     to set a custom title
+     add onclick="return(CDL.DSC.SlideshowLink(this, 'Dialog title')" 
+
+
+-->
+
+<a 
+  href="http://www.calisphere.universityofcalifornia.edu/browse/publisher/City+of+Dublin+Ca.+Heritage+Center"
+  onclick="return(CDL.DSC.SlideshowLink(this, 'Dublin Slideshow'))">Slideshow of Dublin.</a>
+
+    </div>
+
+    <!-- this can go anywere on the page, but current internet wisdom is to place
+         this at the bottom of the page before the body close tag for faster page loading
+    -->
+    <script type="text/javascript" src="http://cdn.calisphere.org/json4lib/slideshow/slideshowLink-combo.js"></script>
+  </body>
+</html>
+

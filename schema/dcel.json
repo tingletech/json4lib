@@ -1,0 +1,30 @@
+{
+  "id":"http://json4lib.googlecode.com/hg/schema/dcel.json#",
+  "$schema":"http://json-schema.org/hyper-schema#",
+  "description":"arbitrarily qualifiable Dublin Core Element",
+  "type":[ 
+    { 
+      "id":"dcel",
+      "type":"object",
+      "properties":{
+        "q":{
+          "type":"string",
+          "description":"arbitrary qualifier"
+        },
+        "v":{
+          "type":"string",
+          "description":"value"
+        }
+      }
+    },
+    "string", 
+    "array" 
+  ],
+  "items":{ 
+    "type":[ 
+      "string", {"$ref":"dcel"}
+    ]
+  }
+  ,"additionalItems":false
+  ,"additionalProperties":false
+}

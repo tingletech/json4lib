@@ -1,0 +1,24 @@
+{ 
+  "id":"http://json4lib.googlecode.com/hg/schema/qdc.json#",
+  "$schema":"http://json-schema.org/hyper-schema#",
+  "type":"object",
+  "description":"dublin core metadata record",
+  "properties": {
+    "title": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "creator": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "subject": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "description": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "publisher": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "contributor": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "date": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "type": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "format": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "identifier": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "source": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "language": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "relation": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "coverage": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" },
+    "rights": { "$ref":"http://json4lib.googlecode.com/hg/schema/dcel.json#" }
+  }
+  ,"additionalProperties":false
+}
