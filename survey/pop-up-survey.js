@@ -30,7 +30,7 @@ CDL.DSC.PopUpSurveySubmit = (typeof CDL.DSC.PopUpSurveySubmit !== 'undefined') ?
   /* http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html
      _trackEvent(                 category,    action, opt_label, opt_value) */
   _gaq.push( ['cst._trackEvent', 'SurveyTest', answer, other ] ); 
-  flash_cookie.set('cdlsurvey',"survey-2012");
+  flash_cookie.set('cdlsurvey',"survey-2012a");
   // time how long they spent before clicking?
   $("#CDL_DSC_PopUpSurvey").remove();
 }
@@ -57,7 +57,7 @@ CDL.DSC.PopUpSurveyPop = (typeof CDL.DSC.PopUpSurveyPop !== 'undefined') ? CDL.D
       close: function() { 
         $("#CDL_DSC_PopUpSurvey").remove(); 
         _gaq.push( ['cst._trackEvent', 'SurveyTest', "declined" ] );
-        flash_cookie.set('cdlsurvey',"survey-2012");
+        flash_cookie.set('cdlsurvey',"survey-2012a");
       },
       open: function() {
         $(this).load('/json4lib/survey/questions.html', function() {
@@ -85,7 +85,7 @@ CDL.DSC.PopUpSurvey = (typeof CDL.DSC.PopUpSurvey !== 'undefined') ? CDL.DSC.Pop
     debug: false, 
     onready: function(){ // wait for the page to be ready
       // check if they have been surveyed before
-      if ( ! (flash_cookie.get('cdlsurvey')=='survey-2012') ) { 
+      if ( ! (flash_cookie.get('cdlsurvey')=='survey-2012a') ) { 
         // pop up the survey form, pass along the cookie
         // load jQuery.ui if it's not already loaded
         if (typeof jQuery.ui == 'undefined') {
