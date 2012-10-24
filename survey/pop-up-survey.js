@@ -4,9 +4,6 @@
 var CDL = (typeof CDL !== 'undefined') ? CDL : {} ;
 CDL.DSC = (typeof CDL.DSC !== 'undefined') ? CDL.DSC : {};
 
-// placeholder for flash cookie
-CDL.DSC.PopUpSurveyCookie = (typeof CDL.DSC.PopUpSurveyCookie !== 'undefined') ? CDL.DSC.PopUpSurveyCookie : "";
-
 /* 
  * CDL.DSC.PopUpSurvey* are functions that encapsulate functionality of the pop up survey
  * seems to be written in backwards order of what it gets run in
@@ -30,7 +27,6 @@ CDL.DSC.PopUpSurveySubmit = (typeof CDL.DSC.PopUpSurveySubmit !== 'undefined') ?
   /* http://code.google.com/apis/analytics/docs/tracking/eventTrackerGuide.html
      _trackEvent(                 category,    action, opt_label, opt_value) */
   _gaq.push( ['cst._trackEvent', 'SurveyTest', answer, other ] ); 
-  flash_cookie.set('cdlsurvey',"survey-2012a");
   // time how long they spent before clicking?
   $("#CDL_DSC_PopUpSurvey").remove();
 }
@@ -40,7 +36,7 @@ CDL.DSC.PopUpSurveySubmit = (typeof CDL.DSC.PopUpSurveySubmit !== 'undefined') ?
  *  open the jQueryDialog; pass the flash cookie up?
  */
 
-CDL.DSC.PopUpSurveyPop = (typeof CDL.DSC.PopUpSurveyPop !== 'undefined') ? CDL.DSC.PopUpSurveyPop : function(flash_cookie){
+CDL.DSC.PopUpSurveyPop = (typeof CDL.DSC.PopUpSurveyPop !== 'undefined') ? CDL.DSC.PopUpSurveyPop : function(){
   var anchor=$('body');
   // the logic here leave something to be desired works via trial and
   // error, based on slideshow widget
@@ -57,7 +53,6 @@ CDL.DSC.PopUpSurveyPop = (typeof CDL.DSC.PopUpSurveyPop !== 'undefined') ? CDL.D
       close: function() { 
         $("#CDL_DSC_PopUpSurvey").remove(); 
         _gaq.push( ['cst._trackEvent', 'SurveyTest', "declined" ] );
-        flash_cookie.set('cdlsurvey',"survey-2012a");
       },
       open: function() {
         $(this).load('/json4lib/survey/questions.html', function() {
@@ -77,32 +72,18 @@ CDL.DSC.PopUpSurveyPop = (typeof CDL.DSC.PopUpSurveyPop !== 'undefined') ? CDL.D
  */
 CDL.DSC.PopUpSurvey = (typeof CDL.DSC.PopUpSurvey !== 'undefined') ? CDL.DSC.PopUpSurvey : function(){
   // Javascript Flash Cookie
-  flash_cookie = new SwfStore({ 
-    // this must match all other instances that want to share cookies
-    namespace: 'CDL.OAC/Calisphere.survey_test', 
-    // swf_url: '/json4lib/survey/jfc/storage.swf', 
-    swf_url: 'http://cdn.calisphere.org/json4lib/survey/jfc/storage.swf', 
-    debug: false, 
-    onready: function(){ // wait for the page to be ready
-      // check if they have been surveyed before
-      if ( ! (flash_cookie.get('cdlsurvey')=='survey-2012a') ) { 
-        // pop up the survey form, pass along the cookie
-        // load jQuery.ui if it's not already loaded
-        if (typeof jQuery.ui == 'undefined') {
-          jQuery.getScript('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js',function(){
-            CDL.DSC.PopUpSurveyPop(flash_cookie); 
-          });
-        } else {
-          CDL.DSC.PopUpSurveyPop(flash_cookie); 
-        }
-      };
-    },
-    onerror: function(){
-      // in case we had an error. (The most common cause is that the user disabled flash cookies.)
-      // $('#status').text('Error');
-      // we don't want to run the survey if the flash cookies don't work
+  var lotto =  Math.floor(Math.random() * (1000)) + 1;
+  if (lotto == 1) {
+    // pop up the survey form
+    // load jQuery.ui if it's not already loaded
+    if (typeof jQuery.ui == 'undefined') {
+      jQuery.getScript('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js',function(){
+        CDL.DSC.PopUpSurveyPop(); 
+      });
+    } else {
+      CDL.DSC.PopUpSurveyPop(); 
     }
-  });
+  }
 };
 
 (function() {
